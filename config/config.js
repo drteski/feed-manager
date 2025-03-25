@@ -3,37 +3,37 @@ import { Files, Braces, Settings, LayoutDashboard } from "lucide-react";
 const Pages = [
   {
     title: "Dashboard",
-    name: "dashboard",
+    breadcrumbs: ["Dashboard"],
     url: "/",
     isActive: true,
     icon: <LayoutDashboard />,
   },
   {
     title: "Produkty",
-    name: "products",
+    breadcrumbs: ["Produkty"],
     url: "/products",
     icon: <Files />,
   },
   {
     title: "Feedy",
-    name: "feeds",
+    breadcrumbs: ["Feedy"],
     url: "/feeds",
     icon: <Braces />,
   },
   {
     title: "Ustawienia",
-    name: "settings",
+    breadcrumbs: ["Ustawienia"],
     url: "/settings",
     icon: <Settings />,
     items: [
       {
         title: "Kraje",
-        name: "countries",
+        breadcrumbs: ["Ustawienia", "Kraje"],
         url: "/settings/countries",
       },
       {
         title: "Feedy",
-        name: "feeds",
+        breadcrumbs: ["Ustawienia", "Feedy"],
         url: "/settings/feeds",
       },
     ],

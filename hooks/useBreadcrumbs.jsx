@@ -5,20 +5,20 @@ import { PagesFlatArray } from "@/lib/utils";
 
 const useBreadcrumbs = (pathname) => {
   const [breadcrumbs, setBreadcrumbs] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
+    setIsLoading(true);
     if (!pathname) return;
     const pages = PagesFlatArray();
-    if (pathname === "/") return setBreadcrumbs(["Dashboard"]);
-    const splitedPaths = pathname.split("/").filter((path) => path !== "");
-    return setBreadcrumbs(
-      ...splitedPaths.map((path) =>
-        pages
-          .filter((page) => page.url.includes(path))
-          .map((page) => page.title),
-      ),
-    );
+
+    setBreadcrumbs(pages.filter((page) => page.url === pathname));
+
+    setIsLoading(false);
   }, [pathname]);
-  return breadcrumbs;
+  return {
+    isLoading,
+    breadcrumbs,
+  };
 };
 
 export default useBreadcrumbs;
