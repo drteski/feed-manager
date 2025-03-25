@@ -4,15 +4,13 @@ import { useEffect, useState } from "react";
 import { PagesFlatArray } from "@/lib/utils";
 
 const useBreadcrumbs = (pathname) => {
-  const [breadcrumbs, setBreadcrumbs] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [breadcrumbs, setBreadcrumbs] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     setIsLoading(true);
     if (!pathname) return;
     const pages = PagesFlatArray();
-
-    setBreadcrumbs(pages.filter((page) => page.url === pathname));
-
+    setBreadcrumbs(...pages.filter((page) => page.url === pathname));
     setIsLoading(false);
   }, [pathname]);
   return {

@@ -14,7 +14,6 @@ const SidebarThemeSwitcher = () => {
   const [dark, setDark] = useState(false);
   useLayoutEffect(() => {
     const body = document.querySelector("body");
-    console.log(dark);
     dark ? body.classList.add("dark") : body.classList.remove("dark");
   }, [dark]);
 

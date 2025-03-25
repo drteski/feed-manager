@@ -12,7 +12,7 @@ import SidebarItem from "@/components/Sidebar/SidebarItem";
 import SidebarThemeSwitcher from "@/components/Sidebar/SidebarThemeSwitcher";
 import SidebarLogo from "@/components/Sidebar/SidebarLogo";
 
-const AppSidebar = () => {
+const SidebarApp = () => {
   return (
     <Sidebar collapsible="icon" variant="inset">
       <SidebarLogo />
@@ -36,4 +36,4 @@ const AppSidebar = () => {
   );
 };
 
-export default AppSidebar;
+export default SidebarApp;
